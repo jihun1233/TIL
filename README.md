@@ -1,2 +1,2 @@
-# TodayILearn
+# TodayILearned!
 TIL, algorithm, test ...
