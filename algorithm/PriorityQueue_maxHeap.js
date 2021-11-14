@@ -67,20 +67,20 @@ class PriorityQueue{
     return Math.floor((index-1)/2);
   }
 }
-
-const test = () => {
-  const pq = new PriorityQueue();
-  pq.push(1,5);
-  pq.push(2,4);
-  pq.push(3,3);
-  pq.push(4,2);
-  pq.push(5,1);
+exports.PriorityQueue = PriorityQueue;
+// const test = () => {
+//   const pq = new PriorityQueue();
+//   pq.push(1,5);
+//   pq.push(2,4);
+//   pq.push(3,3);
+//   pq.push(4,2);
+//   pq.push(5,1);
   
-  console.log(pq.heap);
-  console.log(pq.pop());
-  console.log(pq.pop());
-  console.log(pq.pop());
-  console.log(pq.pop());
-  console.log(pq.pop());
-}
-test();
+//   console.log(pq.heap);
+//   console.log(pq.pop());
+//   console.log(pq.pop());
+//   console.log(pq.pop());
+//   console.log(pq.pop());
+//   console.log(pq.pop());
+// }
+// test();
