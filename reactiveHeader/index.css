@@ -1,0 +1,44 @@
+html,
+head,
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  background-color: darkorchid;
+  color: aliceblue;
+  white-space: nowrap;
+}
+
+.headerNav {
+  display: none;
+}
+.headerNav > ul {
+  list-style: none;
+}
+.headerNav_visible {
+  display: flex;
+  flex-direction: row;
+}
+.headerNav > ul > li {
+  margin: 1em;
+}
+.menuToggle {
+  visibility: visible;
+  margin-top: 1.5em;
+  cursor: pointer;
+}
+@media screen and (min-width: 769px) {
+  .headerNav > ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .menuToggle {
+    margin-top: auto;
+    margin-bottom: auto;
+    visibility: hidden;
+  }
+}
