@@ -1,44 +1,77 @@
-html,
-head,
+:root {
+  --header-color: rgb(255, 96, 247);
+}
 body {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 .header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid;
-  background-color: darkorchid;
-  color: aliceblue;
+  background-color: var(--header-color);
   white-space: nowrap;
+  padding: 0 10px 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+  /* box-sizing:border-box;를 하면 margin, padding이 사이즈 width에 함께 포함된다.
+  그렇지않으면 width와 따로 동작해 범위 밖으로 벗어날 수 있다. */
 }
-
-.headerNav {
-  display: none;
-}
-.headerNav > ul {
-  list-style: none;
-}
-.headerNav_visible {
+.logo {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  font-size: 25px;
+  text-align: center;
 }
-.headerNav > ul > li {
-  margin: 1em;
+.snsIcon {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  gap: 10px;
 }
-.menuToggle {
-  visibility: visible;
-  margin-top: 1.5em;
+.menuToggleIcon {
+  position: absolute;
+  right: 32px;
+  top: 25px;
+  font-size: 30px;
+  display: none;
   cursor: pointer;
 }
-@media screen and (min-width: 769px) {
-  .headerNav > ul {
-    display: flex;
-    flex-direction: row;
+.menuList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .menuToggleIcon {
+    display: block;
   }
-  .menuToggle {
-    margin-top: auto;
-    margin-bottom: auto;
-    visibility: hidden;
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .menuList {
+    display: none;
+  }
+  .menuList.activate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .snsIcon {
+    display: none;
+  }
+  .snsIcon.activate {
+    display: block;
+    width: 100%;
+    justify-content: center;
+  }
+  .logo {
+    width: 100%;
+    justify-items: flex-start;
   }
 }
