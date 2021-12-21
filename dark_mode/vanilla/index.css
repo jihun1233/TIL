@@ -1,0 +1,43 @@
+/* :root 는 루트 요소인 html을 가리킴. []부분은 html태그의 속성을 나타냄. */
+/* html의 color-theme 속성이 light인 경우 */
+:root[color-theme="light"] {
+  --background: #fff;
+  --text-color: #000;
+  --title: "It's light mode!";
+}
+/* html의 color-theme 속성이 dark인 경우 */
+:root[color-theme="dark"] {
+  --background: #000;
+  --text-color: #fff;
+  --title: "It's dark mode!";
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--text-color);
+  transition: background 0.5s ease-in, color 0.5s ease-in;
+  /* ease-in은 transition을 느리다가 빠르게 해준다. */
+}
+#title::after {
+  content: var(--title);
+}
+header,
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer {
+  position: fixed;
+  bottom: 10%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
