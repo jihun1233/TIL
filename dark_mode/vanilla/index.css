@@ -3,18 +3,27 @@
 :root[color-theme="light"] {
   --background: #fff;
   --text-color: #000;
+  --border-color: rgb(90, 90, 90);
   --title: "It's light mode!";
 }
 /* html의 color-theme 속성이 dark인 경우 */
 :root[color-theme="dark"] {
   --background: #000;
   --text-color: #fff;
+  --border-color: rgb(207, 207, 207);
   --title: "It's dark mode!";
 }
-body {
+html {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  height: 100vh;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: var(--background);
   color: var(--text-color);
   transition: background 0.5s ease-in, color 0.5s ease-in;
@@ -27,17 +36,20 @@ header,
 footer {
   display: flex;
   justify-content: center;
+  height: 5%;
+}
+header {
+  border-bottom: solid 1px var(--border-color);
 }
 footer {
-  position: fixed;
-  bottom: 10%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  border-top: solid 1px var(--border-color);
+  align-items: center;
 }
 section {
-  height: 100%;
+  height: 90%;
+  /* padding: 10%; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
